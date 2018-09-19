@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Inside the iFrame -->
+<html>
+
+<head>
+    <title>Inside the iFrame</title>
+</head>
+
+<body>
+
+
+<p>Hi! I'm in an iFrame!</p>
+
+<script id="iframeScript" type="text/javascript">
+document.getElementById("iframeScript").insertAdjacentHTML("afterend", "<p>Nothing suspicious going on here...</p>");
+
+
+var parentIframe = parent.document.getElementById("iframeID");
+var htmlPayload  = "<h1>I have taken over the webpage.</h1>";
+
+parentIframe.insertAdjacentHTML("afterend", "<p>Muahahaha, I've broken out!</p>");
+
+parent.document.body.innerHTML = htmlPayload; // Overwrite the parent page
+
+</script>
+
+
+</body>
+</html>
