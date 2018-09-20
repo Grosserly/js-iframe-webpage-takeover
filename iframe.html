@@ -17,8 +17,11 @@ document.getElementById("iframeScript").insertAdjacentHTML("afterend", "<p>Nothi
 
 var payload = "javascript:void(document.body.innerHTML='<h1>ohno</h1>');";
 
-parent.window.location = payload;
-window.location        = payload;
+parent.window.location.href     = payload;
+parent.window.top.location.href = payload;
+
+window.top.location.href        = payload;
+window.location.href            = payload;
 
 </script>
 
