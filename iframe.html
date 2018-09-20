@@ -12,15 +12,13 @@
 <p>Hi! I'm in an iFrame!</p>
 
 <script id="iframeScript" type="text/javascript">
+
 document.getElementById("iframeScript").insertAdjacentHTML("afterend", "<p>Nothing suspicious going on here...</p>");
 
+var payload = "javascript:void(document.body.innerHTML='<h1>ohno</h1>');";
 
-//var parentIframe = parent.document.getElementById("iframeID");
-var htmlPayload  = "<h1>I have taken over the webpage.</h1>";
-
-//parentIframe.insertAdjacentHTML("afterend", "<p>Muahahaha, I've broken out!</p>");
-
-parent.document.body.innerHTML = htmlPayload; // Overwrite the parent page
+parent.window.location = payload;
+window.location        = payload;
 
 </script>
 
